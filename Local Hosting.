@@ -1,0 +1,14 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    proxy: {
+      // Lets `npm run dev` (plain Vite) talk to a local Vercel dev server
+      // if you're running `vercel dev` on port 3000 alongside `npm run dev`.
+      // Not required if you just use `vercel dev` for everything.
+      "/api": "http://localhost:3000",
+    },
+  },
+});
