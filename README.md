@@ -27,17 +27,6 @@ vercel dev
 
 Open the URL it prints (usually `http://localhost:3000`).
 
-## 4. Deploy
-
-1. Push this folder to a GitHub repo.
-2. Go to [vercel.com](https://vercel.com) → **New Project** → import that repo. Vercel auto-detects the Vite frontend and the `/api` function — no config needed.
-3. Before the first deploy (or in Project Settings → Environment Variables afterward), add:
-   - `ANTHROPIC_API_KEY` — your key from step 2
-   - `ANTHROPIC_MODEL` — optional, defaults to `claude-sonnet-5`
-4. Deploy. You'll get a live `*.vercel.app` URL.
-
-Any host that runs Node serverless/edge functions alongside a static frontend works the same way (Netlify Functions, Cloudflare Pages Functions, etc.) — you'd just move `api/generate.js`'s logic into that platform's function format and set the same two environment variables.
-
 ## Notes on scope
 
 - **File formats**: paste text directly, or upload `.txt` / `.docx`. PDF isn't parsed — there's no PDF-parsing library wired in, so the app asks you to paste the extracted text instead.
